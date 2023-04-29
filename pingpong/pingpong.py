@@ -27,6 +27,11 @@ class Padlle():
         self.canvas.bind_all("<Right>",self.right)
     def draw(self):
         self.canvas.move(self.id, self.x, 0)
+        pos = self.canvas.coords(self.id)
+        if pos[0] <= 0:
+            self.x = 2
+        if pos[2] >= 500:
+            self.x = -2
     def left(self,e):
         self.x = -2
     def right(self,e):
