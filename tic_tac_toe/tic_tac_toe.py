@@ -20,10 +20,10 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     screen.fill(purple)
-    pygame.draw.circle(screen,pink,[x,y],15,15)
-    x += 5
-    y += 5
-
+    pygame.draw.line(screen,black,[0,100],[300,100],6)
+    pygame.draw.line(screen,black,[0,200],[300,200],6)
+    pygame.draw.line(screen,black,[100,0],[100,300],6)
+    pygame.draw.line(screen,black,[200,0],[200,300],6)
     pygame.display.flip()
     clock.tick(fps)
 pygame.quit()
