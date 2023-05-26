@@ -1,0 +1,12 @@
+import sqlite3, datetime
+con = sqlite3.connect("database.sqlite")
+cursor = con.cursor()
+#a = cursor.execute("select * from workers where ID_Dep = 1").fetchall()
+#print(a)
+data = datetime.datetime(2020,3,15,0,0,0)
+#cursor.execute("insert into Dep (ID, Name) values (2, 'B')")
+#cursor.execute("update workers set ID_Dep = 2 where ID = 1")
+cursor.execute("delete from workers where ID = 2")
+cursor.execute("commit")
+cursor.close()
+con.close()
