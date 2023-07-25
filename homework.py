@@ -27,6 +27,19 @@ def square_digits(num):
     return a
 
 
+'''# Основная идея состоит в том, чтобы подсчитать все встречающиеся символы в строке. 
+# Если у вас есть строка типа aba, результат должен быть {'a': 2, 'b': 1}.'''
+def count(s):
+    a = {}
+    for i in s:
+        if i in a.keys():
+            a[i] +=1
+        else:
+            a[i] = 1
+    return a
+
+
+
 
 
 
@@ -62,3 +75,41 @@ def calculate_years(p, i, t, d):
         if a>0:
             return years
         
+#Напишите программу, которая вычисляет количество нулей в конце факториала заданного числа.
+#N! = 1 * 2 * 3 *  ... * N
+#Будьте осторожны, 1000!у него 2568 цифр...
+def zeros(n):
+    if n>5:
+        return n//5+zeros(n//5)
+    else:  
+        return 0
+    
+
+#Завершите функцию scramble(str1, str2), которая возвращает, true если часть
+#str1 символов можно переставить, чтобы они соответствовали str2, иначе возвращает false
+
+
+def scramble(s1, s2):
+    # your code here
+    text = ""
+    for i in s2:
+        if (i in s1) and i.islower():
+            s1 = s1.replace(i,"",1)
+            text += i
+        else:
+            continue
+    if text == s2:
+        return True
+    else:
+        return False
+    
+
+
+#Напишите алгоритм, который берет массив и перемещает все нули в конец, сохраняя порядок остальных элементов.
+
+def move_zeros(lst:list):
+    for i in lst:
+        if i==0  in lst:
+            lst.remove(i)
+            lst.append(i)
+    return lst
